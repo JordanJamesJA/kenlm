@@ -4,11 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("tourBookingModal");
   const closeButton = document.querySelector(".close-button");
   const tourNameDiv = document.getElementById("tourName");
-  const tourDescriptionDiv = document.getElementById("tourDescription"); // New input for description
-  const tourPriceDiv = document.getElementById("tourPrice"); // New input for price
+  const tourDescriptionDiv = document.getElementById("tourDescription"); 
+  const tourPriceDiv = document.getElementById("tourPrice"); 
   const tourBookingForm = document.getElementById("tourBookingForm");
 
-  // Tour data (name, description, and price)
+  
   const toursData = {
     ricksCafe: {
       name: "Rick’s Cafe, Negril",
@@ -72,33 +72,33 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   };
 
-  // Show modal and set tour data on card click
+  
   tourCards.forEach((card) => {
     card.addEventListener("click", () => {
       const tourName = card.querySelector("h2").textContent;
       console.log("Tour Name:", tourName);
       tourNameDiv.textContent = tourName;
 
-      // Map tourName to the appropriate tour data
+      
       const tourKey = Object.keys(toursData).find(
         (key) => toursData[key].name === tourName
       );
       if (tourKey) {
         const tour = toursData[tourKey];
-        tourDescriptionDiv.textContent = tour.description; // Populate div with description text
-        tourPriceDiv.textContent = tour.price; // Populate div with price text
+        tourDescriptionDiv.textContent = tour.description; 
+        tourPriceDiv.textContent = tour.price; 
       }
 
       modal.style.display = "flex";
     });
   });
 
-  // Close modal on close button click
+  
   closeButton.addEventListener("click", () => {
     modal.style.display = "none";
   });
 
-  // Close modal if clicking outside content
+  
   window.addEventListener("click", (event) => {
     if (event.target === modal) {
       modal.style.display = "none";

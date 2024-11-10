@@ -171,7 +171,7 @@ nav {
 }
 
 
-/* NAV FOR MOBILE */
+
 
 @media screen and (max-width: 1118px) {
   .nav-menu {
@@ -187,7 +187,7 @@ nav {
     display: block;
   }
 
-  /* Show Menu */
+  
   .nav-menu.show-menu {
     opacity: 1;
     top: 3.5rem;
@@ -485,7 +485,7 @@ h1 {
   color: var(--text);
   text-align: center;
   margin-bottom: 20px;
-  display: none; /* Initially hidden; shown when there are no bookings */
+  display: none; 
 }
 
 .loading-overlay {

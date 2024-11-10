@@ -1,15 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito&family=Zeyada&display=swap");
 
-/* VARIABLES CSS */
 
-/* FONT & TYPOGRAPHY  */
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* CUSTOM SCROLLBARS */
+
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -25,7 +25,7 @@
 }
 
 :root {
-  /* COLORS */
+  
 
   --text: #ffffff;
   --text-2: #089e40;
@@ -35,14 +35,14 @@
   --btn-bg-2: #f7f701;
   --btn-bg-3: #089e40;
   --btn-bg-4: #ffffff;
-  /* --section-bg: #000000; */
+  
   --section-bg: #fff;
   --section-bg-1: #089e40;
   --section-bg-2: #f7f701;
   --section-bg-3: #000000;
   --icon-color-1: #fff;
 
-  /* PAGE PROPERTIES */
+  
   --z-fixed: 100;
   --header-height: 4rem;
 }
@@ -70,14 +70,14 @@ button {
   cursor: pointer;
 }
 
-/* REUSABLE CSS CLASSES */
+
 .container {
   max-width: 1120px;
   margin-inline: 1.5rem;
   margin: auto;
 }
 
-/* HEADER */
+
 
 header {
   position: fixed;
@@ -88,7 +88,7 @@ header {
   z-index: var(--z-fixed);
 }
 
-/* NAV */
+
 
 nav {
   display: flex;
@@ -174,7 +174,7 @@ nav {
   padding-left: 20px;
 }
 
-/* Show Icon */
+
 
 .show-icon .nav-burger {
   opacity: 0;
@@ -186,7 +186,7 @@ nav {
   transform: rotate(90deg);
 }
 
-/* NAV FOR MOBILE */
+
 
 @media screen and (max-width: 1118px) {
   .nav-menu {
@@ -202,7 +202,7 @@ nav {
     display: block;
   }
 
-  /* Show Menu */
+  
   .nav-menu.show-menu {
     opacity: 1;
     top: 3.5rem;
@@ -262,7 +262,7 @@ nav {
   }
 }
 
-/* LARGER SCREENS */
+
 
 @media screen and(min-width:1119px) {
   .container {
@@ -349,7 +349,7 @@ h1 {
   pointer-events: none;
 }
 
-/* FOOTER */
+
 footer {
   display: flex;
   width: 100%;
@@ -402,7 +402,7 @@ footer {
   grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
 }
 
-/* BOOKING FORM STYLES */
+
 .airport-transfer {
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.9);
@@ -411,7 +411,7 @@ footer {
   margin: 20px auto;
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Adjusted for consistent spacing */
+  gap: 20px; 
 }
 
 .airport-transfer h2 {
@@ -431,7 +431,7 @@ footer {
   color: #333;
 }
 
-/* Apply consistent spacing, padding, and form layout */
+
 .booking-form {
   display: none;
   flex-direction: column;
@@ -511,7 +511,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background-color: #0056b3;
 }
 
-/* Media queries for responsiveness */
+
 @media only screen and (max-width: 768px) {
   .booking-container {
     padding: 1.5rem;

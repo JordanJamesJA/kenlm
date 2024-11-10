@@ -7,68 +7,68 @@ const stripe = require("stripe")(
 const toursData = {
   ricksCafe: {
     name: "Rick’s Cafe, Negril",
-    price: 10000, // $100.00 in cents
+    price: 10000, 
     currency: "usd",
   },
   dunnsRiver: {
     name: "Dunn’s River Falls, Ocho Rios",
-    price: 8000, // $80.00 in cents
+    price: 8000, 
     currency: "usd",
   },
   ysFalls: {
     name: "Y’s Falls & Black River Safari, St. Elizabeth",
-    price: 12000, // $120.00 in cents
+    price: 12000, 
     currency: "usd",
   },
   blueHole: {
     name: "Blue Hole, Ocho Rios",
-    price: 9000, // $90.00 in cents
+    price: 9000, 
     currency: "usd",
   },
   bobMarleyMausoleum: {
     name: "Bob Marley Mausoleum, Nine Mile",
-    price: 7000, // $70.00 in cents
+    price: 7000, 
     currency: "usd",
   },
   dolphinCove: {
     name: "Dolphin Cove, Ocho Rios",
-    price: 15000, // $150.00 in cents
+    price: 15000, 
     currency: "usd",
   },
   luminousLagoon: {
     name: "Luminous Lagoon, Falmouth",
-    price: 5000, // $50.00 in cents
+    price: 5000, 
     currency: "usd",
   },
   raftingMarthaBrae: {
     name: "Rafting on the Martha Brae River, Falmouth",
-    price: 6000, // $60.00 in cents
+    price: 6000, 
     currency: "usd",
   },
   devonHouse: {
     name: "Devon House, Kingston",
-    price: 4000, // $40.00 in cents
+    price: 4000, 
     currency: "usd",
   },
   rocklandBirdSanctuary: {
     name: "Rockland Bird Sanctuary, St. James",
-    price: 4500, // $45.00 in cents
+    price: 4500, 
     currency: "usd",
   },
 };
 
 const app = require("express")();
 const corsOptions = {
-  origin: true, // Allow all origins; you can specify a specific origin here
+  origin: true, 
 };
 app.use(cors(corsOptions));
 
-// Firebase Cloud Function to create a Stripe Checkout session
+
 app.post("/create-checkout-session", async (req, res) => {
-  const YOUR_DOMAIN = "http://localhost:5000"; // Update this to your production URL
+  const YOUR_DOMAIN = "http://localhost:5000"; 
 
   try {
-    // Extracting selected tours from the request body
+    
     const { selectedTours } = req.body;
 
     if (
@@ -79,7 +79,7 @@ app.post("/create-checkout-session", async (req, res) => {
       return res.status(400).json({ error: "No tours selected" });
     }
 
-    // Map the selected tours to line items for Stripe
+    
     const lineItems = selectedTours.map((tourKey) => {
       const tour = toursData[tourKey];
 
@@ -99,7 +99,7 @@ app.post("/create-checkout-session", async (req, res) => {
       };
     });
 
-    // Create the checkout session with dynamic line items
+    
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
       line_items: lineItems,

@@ -1,15 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito&family=Zeyada&display=swap");
 
-/* VARIABLES CSS */
 
-/* FONT & TYPOGRAPHY  */
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* CUSTOM SCROLLBARS */
+
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -25,7 +25,7 @@
 }
 
 :root {
-  /* COLORS */
+  
 
   --text: #ffffff;
   --text-2: #089e40;
@@ -41,7 +41,7 @@
   --section-bg-3: #000000;
   --icon-color-1: #fff;
 
-  /* PAGE PROPERTIES */
+  
   --z-fixed: 100;
   --header-height: 4rem;
 }
@@ -65,14 +65,14 @@ button {
   cursor: pointer;
 }
 
-/* REUSABLE CSS CLASSES */
+
 .container {
   max-width: 1120px;
   margin-inline: 1.5rem;
   margin: auto;
 }
 
-/* HEADER */
+
 
 header {
   position: fixed;
@@ -83,7 +83,7 @@ header {
   z-index: var(--z-fixed);
 }
 
-/* NAV */
+
 
 nav {
   display: flex;
@@ -169,7 +169,7 @@ nav {
   
 }
 
-/* Show Icon */
+
 
 .show-icon .nav-burger {
   opacity: 0;
@@ -181,7 +181,7 @@ nav {
   transform: rotate(90deg);
 }
 
-/* COMPANY STORY */
+
 
 .company-story {
   width: 100%;
@@ -255,7 +255,7 @@ nav {
   justify-content: center;
 }
 
-/* FOOTER */
+
 footer {
   width: 100%;
   background-color: var(--section-bg);
@@ -308,7 +308,7 @@ footer {
 
 
 
-/* NAV FOR MOBILE */
+
 
 @media screen and (max-width: 1118px) {
   .nav-menu {
@@ -324,7 +324,7 @@ footer {
     display: block;
   }
 
-  /* Show Menu */
+  
   .nav-menu.show-menu {
     opacity: 1;
     top: 3.5rem;
@@ -360,7 +360,7 @@ footer {
     transition: background-color 0.3s;
   }
 
-  /* C0MPANY STORY */
+  
 
   .company-story {
     height: auto;

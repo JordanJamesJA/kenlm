@@ -1,4 +1,4 @@
-// SHOW MENU
+
 
 const showMenu = (toggleId, navId) => {
   const toggle = document.getElementById(toggleId),
@@ -24,7 +24,7 @@ import {
   getDocs,
 } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 
-// Firebase configuration
+
 const firebaseConfig = {
   apiKey: "AIzaSyC6epvUkkaZAExM6kbf9wb6oBjUs9-iKv0",
   authDomain: "kenlm-2865d.firebaseapp.com",
@@ -39,7 +39,7 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 let isLoggingOut = false;
 
-// Inactivity timeout setup
+
 let inactivityTimer;
 const inactivityTime = () => {
   window.onload = resetTimer;
@@ -48,39 +48,39 @@ const inactivityTime = () => {
 
   function logout() {
     signOut(auth).then(() => {
-      window.location.href = "login.html"; // Redirect to login on sign out
+      window.location.href = "login.html"; 
     });
   }
 
   function resetTimer() {
     clearTimeout(inactivityTimer);
-    inactivityTimer = setTimeout(logout, 300000); // 5 minutes
+    inactivityTimer = setTimeout(logout, 300000); 
   }
 };
 
-// Start inactivity timer
+
 inactivityTime();
 
-// Check authentication state
+
 onAuthStateChanged(auth, (user) => {
   if (user) {
     console.log("User is signed in:", user);
     updateUserProfile(user);
     updateProfileIcon(user);
-    loadUserBookings(user); // Load bookings when user is signed in
+    loadUserBookings(user); 
   } else {
     console.log("No user is signed in.");
     if (!isLoggingOut) {
-      window.location.href = "/register.html"; // Redirect to register if not logged in
+      window.location.href = "/register.html"; 
     }
   }
 });
 
-// Function to update user profile information in the DOM
+
 function updateUserProfile(user) {
   const userName = user.displayName || "User";
   const userEmail = user.email || "No email available";
-  const userProfilePicture = user.photoURL || "./assets/account-icon.png"; // Default profile picture
+  const userProfilePicture = user.photoURL || "./assets/account-icon.png"; 
 
   console.log("Updating user profile:", {
     userName,
@@ -88,7 +88,7 @@ function updateUserProfile(user) {
     userProfilePicture,
   });
 
-  // Update profile information in the DOM
+  
   const welcomeUserNameElement = document.getElementById("welcomeUserName");
   const userNameElement = document.getElementById("userName");
   const userEmailElement = document.getElementById("userEmail");
@@ -102,32 +102,32 @@ function updateUserProfile(user) {
     userProfilePictureElement.src = userProfilePicture;
 }
 
-// Function to update the profile icon with user's photo URL
+
 function updateProfileIcon(user) {
   const profileLinkElement = document.getElementById("profileLink");
-  const profilePhotoUrl = user.photoURL || "./assets/account-icon.png"; // Use default if no photo is set
+  const profilePhotoUrl = user.photoURL || "./assets/account-icon.png"; 
 
   if (profileLinkElement) {
     const profileIconImage = profileLinkElement.querySelector("img");
     if (profileIconImage) {
-      profileIconImage.src = profilePhotoUrl; // Update profile icon to user's picture
+      profileIconImage.src = profilePhotoUrl; 
     }
   }
 }
 
-//base trip cost
 
-// Price per person
+
+
 const adultPrice = 50;
 const childPrice = 30;
 const infantPrice = 0;
 
-// Function to load user bookings from Firestore
+
 async function loadUserBookings(user) {
   const bookingsContainer = document.getElementById("bookingsContainer");
-  bookingsContainer.innerHTML = `<h2>Recent Bookings</h2>`; // Clear container and add header
+  bookingsContainer.innerHTML = `<h2>Recent Bookings</h2>`; 
 
-  console.log("Loading bookings for user:", user.uid); // Log current user UID
+  console.log("Loading bookings for user:", user.uid); 
 
   try {
     const snapshot = await getDocs(collection(db, "bookings"));
@@ -136,18 +136,18 @@ async function loadUserBookings(user) {
       id: doc.id,
     }));
 
-    console.log("All Bookings Retrieved:", bookings); // Log all retrieved bookings
+    console.log("All Bookings Retrieved:", bookings); 
 
-    // Filter bookings for the current user
+    
     const userBookings = bookings.filter((booking) => booking.uid === user.uid);
-    console.log("Filtered User Bookings:", userBookings); // Log the filtered bookings
+    console.log("Filtered User Bookings:", userBookings); 
 
     if (userBookings.length === 0) {
       bookingsContainer.innerHTML += "<p>No previous bookings made</p>";
       return;
     }
 
-    // Display each user's booking in a card format
+    
     userBookings.forEach((booking) => {
       console.log("Rendering Booking:", booking);
 
@@ -156,7 +156,7 @@ async function loadUserBookings(user) {
       const paymentStatus = booking.paymentStatus || "Incomplete";
       const isPaymentIncomplete = paymentStatus === "Incomplete";
       const phone = booking.phone || "N/A";
-      const formattedPhone = phone.replace(/\D/g, ""); // Remove non-digit characters
+      const formattedPhone = phone.replace(/\D/g, ""); 
 
       const displayNumber =
         formattedPhone.length === 10
@@ -203,14 +203,14 @@ async function loadUserBookings(user) {
   }
 }
 
-// Initialize Stripe with your public key
+
 const stripe = Stripe(
   "pk_test_51QJL3IGjUyreWGVT0aJnfSGBQGvF9fH2ovnx9baa8c3vBFCV8YypVM4HuPPYijjjEsLj3HECILOL2cPKSeSMWBvW00gWGgkYzL"
-); // Replace with your Stripe publishable key
+); 
 
 async function loadIncompletePayments(user) {
   const paymentContainer = document.getElementById("paymentContainer");
-  paymentContainer.innerHTML = `<h2>Incomplete Payments</h2>`; // Clear container and add header
+  paymentContainer.innerHTML = `<h2>Incomplete Payments</h2>`; 
 
   try {
     const snapshot = await getDocs(collection(db, "bookings"));
@@ -219,7 +219,7 @@ async function loadIncompletePayments(user) {
       id: doc.id,
     }));
 
-    // Filter only bookings with incomplete payment status and for the current user
+    
     const incompletePayments = bookings.filter(
       (booking) =>
         booking.uid === user.uid && booking.paymentStatus === "Incomplete"
@@ -230,7 +230,7 @@ async function loadIncompletePayments(user) {
       return;
     }
 
-    // Display each incomplete payment in a card format
+    
     incompletePayments.forEach((booking) => {
       const totalPrice = parseFloat(booking.totalPrice) || 0;
 
@@ -255,7 +255,7 @@ async function loadIncompletePayments(user) {
       paymentContainer.appendChild(paymentCard);
     });
 
-    // Add event listener for "Pay Now" buttons
+    
     const payNowButtons = document.querySelectorAll(".pay-now");
     payNowButtons.forEach((button) => {
       button.addEventListener("click", async (event) => {
@@ -263,9 +263,9 @@ async function loadIncompletePayments(user) {
         const price = event.target.dataset.price;
 
         try {
-          // Call your server to create a Stripe Checkout session
+          
           const response = await fetch(
-            "http://localhost:5000/create-checkout-session", // Ensure this URL is correct
+            "http://localhost:5000/create-checkout-session", 
             {
               method: "POST",
               headers: {
@@ -281,7 +281,7 @@ async function loadIncompletePayments(user) {
 
           const { id } = await response.json();
 
-          // Redirect to Stripe Checkout
+          
           const { error } = await stripe.redirectToCheckout({ sessionId: id });
           if (error) {
             console.error("Stripe checkout error:", error.message);
@@ -298,7 +298,7 @@ async function loadIncompletePayments(user) {
   }
 }
 
-// Payment processing function
+
 const createCheckoutSession = async (price, bookingId) => {
   try {
     const response = await fetch(
@@ -308,7 +308,7 @@ const createCheckoutSession = async (price, bookingId) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ price, bookingId }), // Pass price and booking ID
+        body: JSON.stringify({ price, bookingId }),D
       }
     );
 
@@ -318,7 +318,7 @@ const createCheckoutSession = async (price, bookingId) => {
 
     const { id } = await response.json();
 
-    // Redirect to Stripe Checkout
+    
     const { error } = await stripe.redirectToCheckout({ sessionId: id });
     if (error) {
       console.error("Stripe checkout error:", error.message);
@@ -328,18 +328,17 @@ const createCheckoutSession = async (price, bookingId) => {
   }
 };
 
-// Use this function to show incomplete payments when the sidebar link is clicked
 const paymentLink = document.getElementById("paymentLink");
 if (paymentLink && !paymentLink.dataset.initialized) {
   paymentLink.addEventListener("click", (event) => {
     event.preventDefault();
-    showSection(paymentSection); // Show the payment section
-    loadIncompletePayments(auth.currentUser); // Load incomplete payments for the current user
+    showSection(paymentSection); 
+    loadIncompletePayments(auth.currentUser); 
   });
-  paymentLink.dataset.initialized = "true"; // Prevent duplicate listeners
+  paymentLink.dataset.initialized = "true"; 
 }
 
-// Logout functionality
+
 const logout = document.getElementById("logout");
 if (logout) {
   logout.addEventListener("click", () => {
@@ -363,7 +362,7 @@ if (logout) {
   });
 }
 
-// Profile icon click event
+
 document.addEventListener("DOMContentLoaded", function () {
   const profileLinkElement = document.getElementById("profileLink");
 
@@ -379,7 +378,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Sidebar toggle functionality
+
 const sidebar = document.querySelector(".sidebar");
 const toggleButton = document.getElementById("sidebarToggle");
 if (toggleButton) {
@@ -388,55 +387,55 @@ if (toggleButton) {
   });
 }
 
-// Section visibility management
-const bookingsSection = document.getElementById("bookingsContainer");
-const accountSection = document.querySelector(".section:nth-of-type(1)"); // Account Info section
-const paymentSection = document.querySelector(".section:nth-of-type(3)"); // Payment section
-const settingsSection = document.querySelector(".section:nth-of-type(4)"); // Settings section
 
-// Hide all sections by default except for Account Info
+const bookingsSection = document.getElementById("bookingsContainer");
+const accountSection = document.querySelector(".section:nth-of-type(1)"); 
+const paymentSection = document.querySelector(".section:nth-of-type(3)"); 
+const settingsSection = document.querySelector(".section:nth-of-type(4)"); 
+
+
 function hideAllSections() {
   accountSection.style.display = "none";
   bookingsSection.style.display = "none";
   paymentSection.style.display = "none";
-  // settingsSection.style.display = "none";
+  
 }
 
-// Show the specified section
+
 function showSection(section) {
-  hideAllSections(); // Hide all other sections
-  section.style.display = ""; // Show the specified section
+  hideAllSections(); 
+  section.style.display = ""; 
 }
 
-// Event listener for the Bookings link in the sidebar
+
 const bookingsLink = document.getElementById("bookingsLink");
 if (bookingsLink) {
   bookingsLink.addEventListener("click", (event) => {
-    event.preventDefault(); // Prevent the default anchor behavior
-    showSection(bookingsSection); // Show the bookings section
-    loadUserBookings(auth.currentUser); // Load bookings for the user
+    event.preventDefault(); 
+    showSection(bookingsSection); 
+    loadUserBookings(auth.currentUser); 
   });
 }
 
-// Event listener for the Account link in the sidebar
-const accountLink = document.getElementById("accountLink"); // Modify as necessary if the link has a specific ID
+
+const accountLink = document.getElementById("accountLink"); 
 if (accountLink) {
   accountLink.addEventListener("click", (event) => {
     event.preventDefault();
-    showSection(accountSection); // Show the account section
+    showSection(accountSection); 
   });
 }
 
-// Event listener for the Payment link in the sidebar
+
 if (paymentLink) {
   paymentLink.addEventListener("click", (event) => {
     event.preventDefault();
     console.log("Payment link clicked");
-    showSection(paymentSection); // Show the payment section
+    showSection(paymentSection); 
   });
 }
 
-// Initial state: Show account section on page load
+
 hideAllSections();
 showSection(accountSection);
 
@@ -476,8 +475,8 @@ function sendEmail() {
   });
 }
 
-// form.addEventListener("submit", (e) => {
-//   e.preventDefault();
 
-//   sendEmail();
-// });
+
+
+
+

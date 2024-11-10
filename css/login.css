@@ -1,17 +1,17 @@
-/* GOOGLE FONTS */
+
 
 @import url("https://fonts.googleapis.com/css2?family=Nunito&family=Zeyada&display=swap");
 
-/* VARIABLES CSS */
 
-/* FONT & TYPOGRAPHY  */
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* CUSTOM SCROLLBARS */
+
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -27,7 +27,7 @@
 }
 
 :root {
-  /* COLORS */
+  
 
   --text: #ffffff;
   --text-2: #089e40;
@@ -37,14 +37,14 @@
   --btn-bg-2: #f7f701;
   --btn-bg-3: #089e40;
   --btn-bg-4: #ffffff;
-  /* --section-bg: #000000; */
+  
   --section-bg: #fff;
   --section-bg-1: #089e40;
   --section-bg-2: #f7f701;
   --section-bg-3: #000000;
   --icon-color-1: #fff;
 
-  /* PAGE PROPERTIES */
+  
   --z-fixed: 100;
   --header-height: 4rem;
 }
@@ -69,14 +69,14 @@ button {
   cursor: pointer;
 }
 
-/* REUSABLE CSS CLASSES */
+
 .container {
   max-width: 1120px;
   margin-inline: 1.5rem;
   margin: auto;
 }
 
-/* HEADER */
+
 
 header {
   position: fixed;
@@ -87,7 +87,7 @@ header {
   z-index: var(--z-fixed);
 }
 
-/* NAV */
+
 
 nav {
   display: flex;
@@ -259,7 +259,7 @@ p > a {
 }
 
 
-/* NAV FOR MOBILE */
+
 
 @media screen and (max-width: 1118px) {
     .nav-menu {
@@ -305,14 +305,14 @@ p > a {
     }
 }
 
-/* Show Menu */
+
 .show-menu {
     opacity: 1;
     top: 3.5rem;
     pointer-events: initial;
   }
   
-  /* Show Icon */
+  
   
   .show-icon .nav-burger {
     opacity: 0;
@@ -324,9 +324,9 @@ p > a {
     transform: rotate(90deg);
   }
   
-  /* BREAKPOINTS */
   
-  /* SMALL DEVICES */
+  
+  
   
   @media only screen and(max-width:400px) {
     .container {
@@ -338,7 +338,7 @@ p > a {
     }
   }
   
-  /* LARGE DEVICES */
+  
   
   @media screen and(min-width:1119px) {
     .container {
