@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KenLM - Tours</title>
+    <link rel="icon" type="image/png" href="./assets/logo.png" />
+    <link rel="stylesheet" href="./css/tours.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav container">
+        <div class="nav-left">
+          <a href="./index.html"><img src="./assets/logo.png" /></a>
+        </div>
+        <div class="nav-toggle" id="nav-toggle">
+          <i class="ri-menu-line nav-burger"></i>
+          <i class="ri-close-line nav-close"></i>
+        </div>
+
+        <!-- NAV MENU -->
+        <div class="nav-menu" id="nav-menu">
+          <ul class="nav-list">
+            <li><a href="./index.html" class="nav-link">Home</a></li>
+            <li><a href="./about.html" class="nav-link">About</a></li>
+            <li><a href="./services.html" class="nav-link">Services</a></li>
+            <li><a href="./contact.html" class="nav-link">Contact</a></li>
+            <li><a href="#" class="nav-link">Reservations</a></li>
+          </ul>
+          <div class="nav-right">
+            <a href="#" id="profile-icon"
+              ><img src="./assets/account-icon.png" alt="Account"
+            /></a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="tour-section">
+        <div class="container">
+          <h1 class="section-title">Available Tours</h1>
+          <div class="tour-grid">
+            <div class="tour-card">
+              <h2>Rick’s Cafe, Negril</h2>
+              <p>Experience the best sunset and cliff diving in Jamaica.</p>
+            </div>
+            <div class="tour-card">
+              <h2>Dunn’s River Falls, Ochio Rios</h2>
+              <p>Climb the world-famous waterfalls of Dunn’s River Falls.</p>
+            </div>
+            <div class="tour-card">
+              <h2>Y’s Falls & Black River Safari, St. Elizabeth</h2>
+              <p>
+                Discover the natural beauty of Y's Falls and the Black River.
+              </p>
+            </div>
+            <div class="tour-card">
+              <h2>Appleton Estate Rum Tour, St.Elizabeth</h2>
+              <p>Learn about the rum-making process and taste premium rums.</p>
+            </div>
+            <div class="tour-card">
+              <h2>Blue Hole, St. Ann</h2>
+              <p>Swim and explore the stunning Blue Hole waterfall.</p>
+            </div>
+            <div class="tour-card">
+              <h2>Bob Marley Mausoleum, 9 Miles</h2>
+              <p>Visit the resting place of the legendary Bob Marley.</p>
+            </div>
+            <div class="tour-card">
+              <h2>Dolphin Cove, Ochi Rios</h2>
+              <p>Swim with dolphins and enjoy other marine activities.</p>
+            </div>
+            <div class="tour-card">
+              <h2>Dolphin Cove, Hanover</h2>
+              <p>Experience the wonder of Dolphin Cove in Hanover.</p>
+            </div>
+            <div class="tour-card">
+              <h2>Luminous Lagoon, Falmouth</h2>
+              <p>See the natural phenomenon of the glowing lagoon.</p>
+            </div>
+            <div class="tour-card">
+              <h2>Rafting on the Martha Brae, Falmouth</h2>
+              <p>Enjoy a relaxing bamboo raft ride on the Martha Brae River.</p>
+            </div>
+            <div class="tour-card">
+              <h2>Bob Marley Museum, Kingston</h2>
+              <p>Explore the museum dedicated to the life of Bob Marley.</p>
+            </div>
+            <div class="tour-card">
+              <h2>Devon House Tour, Kingston</h2>
+              <p>Tour the historic Devon House mansion and gardens.</p>
+            </div>
+            <div class="tour-card">
+              <h2>Bird Sanctuary, Rockland</h2>
+              <p>Visit the Rockland Bird Sanctuary and feed exotic birds.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Modal for Tour Booking Form -->
+      <div id="tourBookingModal" class="modal">
+        <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <h2>Tour Booking</h2>
+          <form id="tourBookingForm" action="#" method="POST">
+            <!-- Tour Name -->
+            <div class="form-group">
+              <label for="tourName">Tour Name:</label>
+              <div id="tourName" name="tourName"></div>
+            </div>
+            
+            <!-- Price (auto-filled when tour card is clicked) -->
+            <div class="form-group">
+              <label for="tourPrice">Price (USD):</label>
+              <div id="tourPrice" name="tourPrice"></div>
+            </div>
+
+            <!-- Tour Description (auto-filled when tour card is clicked) -->
+            <div class="form-group">
+              <label for="tourDescription">Description:</label>
+              <div id="tourDescription" class="tour-info"></div>
+            </div>
+
+            <!-- Tour Date -->
+            <div class="form-group">
+              <label for="tourDate">Tour Date:</label>
+              <input type="date" id="tourDate" name="tourDate" required />
+            </div>
+
+            <!-- Number of Participants -->
+            <div class="form-group">
+              <label for="adults">Number of Adults (18+):</label>
+              <input
+                type="number"
+                id="adults"
+                name="adults"
+                min="1"
+                value="1"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="children">Number of Children (2-17):</label>
+              <input
+                type="number"
+                id="children"
+                name="children"
+                min="0"
+                value="0"
+              />
+            </div>
+            <div class="form-group">
+              <label for="infants">Number of Infants (Under 2):</label>
+              <input
+                type="number"
+                id="infants"
+                name="infants"
+                min="0"
+                value="0"
+              />
+            </div>
+
+            <!-- Customer Information -->
+            <div class="form-group">
+              <label for="fullName">Full Name:</label>
+              <input type="text" id="fullName" name="fullName" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number:</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="(123) 456-7890"
+                required
+              />
+            </div>
+
+            <!-- Special Requests/Notes -->
+            <div class="form-group">
+              <label for="specialRequests">Special Requests/Notes:</label>
+              <textarea
+                id="specialRequests"
+                name="specialRequests"
+                rows="3"
+                placeholder="Enter any special requests or requirements"
+              ></textarea>
+            </div>
+
+            <!-- Optional Fields -->
+            <div class="form-group">
+              <label for="pickupLocation">Pickup Location:</label>
+              <input
+                type="text"
+                id="pickupLocation"
+                name="pickupLocation"
+                placeholder="Enter pickup location (if applicable)"
+              />
+            </div>
+            <div class="form-group">
+              <label for="timeSlot">Select Time Slot:</label>
+              <select id="timeSlot" name="timeSlot">
+                <option value="" disabled selected>Select a time slot</option>
+                <option value="morning">Morning</option>
+                <option value="afternoon">Afternoon</option>
+                <option value="evening">Evening</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="paymentMethod">Payment Method:</label>
+              <select id="paymentMethod" name="paymentMethod">
+                <option value="" disabled selected>
+                  Select payment method
+                </option>
+                <option value="creditCard">Credit Card</option>
+                <option value="payOnArrival">Pay on Arrival</option>
+              </select>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+              <button type="submit">Book Now</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-ctn">
+        <p>&copy; 2024 Your Company Name. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="bookings.js"></script>
+    <script type="module" src="./js/auth.js"></script>
+    <script type="module" src="./js/firebaseConfig.js"></script>
+    <script src="./js/tours.js"></script>
+  </body>
+</html>
