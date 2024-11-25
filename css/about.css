@@ -1,0 +1,449 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&family=Zeyada&display=swap");
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f7f70137;
+  background: black;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(#089e40, #f7f701);
+}
+
+:root {
+  
+
+  --text: #ffffff;
+  --text-2: #089e40;
+  --text-3: #f7f701;
+  --text-4: #000;
+  --btn-bg-1: #000000;
+  --btn-bg-2: #f7f701;
+  --btn-bg-3: #089e40;
+  --btn-bg-4: #ffffff;
+  --section-bg: #fff;
+  --section-bg-1: #089e40;
+  --section-bg-2: #f7f701;
+  --section-bg-3: #000000;
+  --icon-color-1: #fff;
+
+  
+  --z-fixed: 100;
+  --header-height: 4rem;
+}
+
+body {
+  height: 100vh;
+  font-family: nunito;
+  padding-top: var(--header-height);
+  background-color: var(--section-bg-3);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+  margin: auto;
+}
+
+
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: var(--z-fixed);
+}
+
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--section-bg-);
+}
+
+.nav {
+  height: var(--header-height);
+}
+
+.nav-left {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-toggle {
+  display: none;
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+
+.nav-burger,
+.nav-close {
+  position: absolute;
+  width: max-content;
+  height: max-content;
+  inset: 0;
+  margin: auto;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: opacity 0.1s, transform 0.4s;
+}
+
+.nav-close {
+  opacity: 0;
+}
+
+.nav-left img {
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  padding-left: 20px;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.nav-list {
+  align-items: center;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  column-gap: 2rem;
+  margin-right: 8rem;
+  font-size: 0.95rem;
+}
+
+.nav-link {
+  color: var(--text-2);
+}
+
+.nav-link:hover {
+  color: var(--text-3);
+}
+
+.nav-right {
+  background-color: #fff;
+}
+
+.nav-right img {
+  height: 35px;
+  cursor: pointer;
+  display: flex;
+  padding-left: 20px;
+  
+}
+
+
+
+.show-icon .nav-burger {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+.show-icon .nav-close {
+  opacity: 1;
+  transform: rotate(90deg);
+}
+
+
+
+.company-story {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cs-ctn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.cs-objects {
+  width: 700px;
+  height: 420px;
+}
+
+.cs-left img {
+  max-width: 100%;
+  height: auto;
+}
+
+.cs-right {
+  display: flex;
+  background-color: var(--section-bg-3);
+}
+
+.cs-right-info {
+  color: var(--text);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: auto;
+}
+
+.cs-right-info h2 {
+  font-weight: 500;
+  font-size: 2.1rem;
+}
+
+.cs-right-info p {
+  width: 80%;
+  font-size: 15px;
+}
+
+.cs-right-info button {
+  width: 6rem;
+  height: 2rem;
+  border: none;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: var(--text);
+  background-color: #007bff;
+}
+
+.cs-right-info button:hover {
+  background-color: #007bffe9;
+}
+
+.cr {
+  color: var(--text);
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+
+footer {
+  width: 100%;
+  background-color: var(--section-bg);
+}
+
+.footer-ctn {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  color: var(--text-4);
+}
+
+.footer-contact h2 {
+  color: var(--text-2);
+  font-size: 2.3rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.fc-sections {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 3rem;
+  place-items: center;
+  align-items: flex-start;
+}
+
+.fc-element {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: space-evenly;
+}
+
+.fc-element h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 20px 0;
+}
+
+.opening-hours {
+  width: 200px;
+  height: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+}
+
+
+
+
+
+@media screen and (max-width: 1118px) {
+  .nav-menu {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: calc(100vh - 3.5rem);
+    overflow: auto;
+    pointer-events: none;
+    opacity: 0;
+    transition: top 0.4s, opacity 0.3s;
+    display: block;
+  }
+
+  
+  .nav-menu.show-menu {
+    opacity: 1;
+    top: 3.5rem;
+    pointer-events: initial;
+  }
+
+  .nav-menu::-webkit-scrollbar {
+    width: 0;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-list {
+    display: block;
+    margin-right: 0;
+    column-gap: 0;
+    height: auto;
+    flex-direction: column;
+    background-color: var(--section-bg);
+    padding-top: 1rem;
+  }
+
+  .nav-link {
+    color: var(--text-2);
+    background-color: var(--section-bg);
+    font-weight: 600;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+  }
+
+  
+
+  .company-story {
+    height: auto;
+  }
+
+  .cs-ctn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .cs-objects {
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .cs-left {
+    height: 100%;
+    
+  }
+
+  .cs-left img {
+    height: 100%;
+  }
+
+  .cs-right {
+    display: flex;
+    height: 100%;
+    padding: 40px 0;
+    justify-content: space-evenly;
+  }
+  
+  .cs-right-info {
+    display: flex;
+    height: 100%;
+    justify-content: space-evenly;
+  }
+
+  .cs-right-info h2 {
+    margin-bottom: 1rem;
+  }
+
+  .cs-right-info p {
+    margin-bottom: 1rem;
+  }
+
+  .cs-right-info button {
+    margin: 1rem 0;
+  }
+
+  .cr {
+    margin: 1.5rem 0;
+  }
+}
+
+@media screen and(min-width:1119px) {
+  .container {
+    margin-inline: auto;
+  }
+
+  .nav {
+    height: calc(var(--header-height) + 2rem);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-list {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    column-gap: 3rem;
+  }
+
+  .nav-link {
+    height: 100%;
+    padding: 0;
+    justify-content: initial;
+    column-gap: 0.25rem;
+  }
+
+  
+}

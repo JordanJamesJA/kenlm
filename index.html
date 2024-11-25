@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <meta
+      name="description"
+      content="Think of us as your travel companions, your road trip budies, and your partners in creating stories that last a lifetime. With a crew of adventure enthusiasts, we're not just driving you; we're propelling you into a world of extraordinary experiences."
+    />
+    <meta
+      name="keywords"
+      content="Airport, Airporter, Bus, Car, City, Express, Pickup, Shuttle, Service, Transfer, Travel "
+    />
+    <title>KenLM - Home</title>
+    <link rel="icon" type="image/png" href="./assets/logo.png" />
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- HEADER -->
+
+    <header>
+      <nav class="nav container">
+        <div class="nav-left">
+          <a href="./index.html"><img src="./assets/logo.png" /> </a>
+        </div>
+        <div class="nav-toggle" id="nav-toggle">
+          <i class="ri-menu-line nav-burger"></i>
+          <i class="ri-close-line nav-close"></i>
+        </div>
+
+        <!-- NAV MENU -->
+
+        <div class="nav-menu" id="nav-menu">
+          <ul class="nav-list">
+            <li><a href="./index.html" class="nav-link">Home</a></li>
+            <li><a href="./about.html" class="nav-link">About</a></li>
+            <li><a href="./services.html" class="nav-link">Services</a></li>
+            <li><a href="./contact.html" class="nav-link">Contact</a></li>
+            <li><a href="#" class="nav-link">Reservations</a></li>
+          </ul>
+          <div class="nav-right">
+            <a href="" id="profile-link"
+              ><img src="./assets/account-icon.png"
+            /></a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <video autoplay muted loop id="bg-video">
+      <source src="./assets/hero-bg.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-section">
+      <div class="booking-container container">
+        <div class="booking-options">
+          <button id="airport-transfer-tab" class="tab-btn active">
+            Airport Transfer
+          </button>
+          <button id="tour-tab" class="tab-btn">Book Tour</button>
+        </div>
+
+        <div id="airport-transfer-options" class="booking-form active">
+          <div class="option-row">
+            <div class="options-left">
+              <div class="option">
+                <label for="transfer-type">Transfer Type:</label>
+                <select id="transfer-type" required>
+                  <option value="round">Round Trip</option>
+                  <option value="to-hotel">To Hotel</option>
+                  <option value="to-airport">To Airport</option>
+                </select>
+              </div>
+              <div class="option-row pInfo-option">
+                <div class="option">
+                  <label for="name-tour">Your Name:</label>
+                  <input
+                    type="text"
+                    id="name-tour"
+                    placeholder="Enter your name"
+                    required
+                  />
+                </div>
+                <div class="option">
+                  <label for="phone-tour">Phone Number:</label>
+                  <input
+                    type="tel"
+                    id="phone-tour"
+                    placeholder="Enter your phone number"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="option-right">
+              <div class="option persons">
+                <label for="persons">Persons:</label>
+                <input
+                  type="number"
+                  id="adults"
+                  placeholder="Adult"
+                  min="1"
+                  max="10"
+                  required
+                />
+                <input
+                  type="number"
+                  id="children"
+                  placeholder="Child"
+                  min="0"
+                  max="10"
+                />
+                <input
+                  type="number"
+                  id="infants"
+                  placeholder="Infant"
+                  min="0"
+                  max="10"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="lower-options">
+            <div class="option-row options-left">
+              <div class="option">
+                <label for="hotel">Hotel:</label>
+                <select id="hotel" required>
+                  <option value="" disabled selected>Select Hotel</option>
+                  <option value="Azul Beach Resort Negril by Karisma">
+                    Azul Beach Resort Negril by Karisma
+                  </option>
+                  <option value="Bahia Principe">Bahia Principe</option>
+                  <option value="Breathless Montego Bay Resort & Spa">
+                    Breathless Montego Bay Resort & Spa
+                  </option>
+                  <option value="Couples Negril">Couples Negril</option>
+                  <option value="Couples Tower Isle">Couples Tower Isle</option>
+                  <option value="Excellence Oyster Bay">
+                    Excellence Oyster Bay
+                  </option>
+                  <option value="Glistening Waters">Glistening Waters</option>
+                  <option value="Grand Lido Negril Au Naturel All-Suite-Resort">
+                    Grand Lido Negril Au Naturel All-Suite-Resort
+                  </option>
+                  <option value="Grand Palladium Lady Hamilton Resort & Spa">
+                    Grand Palladium Lady Hamilton Resort & Spa
+                  </option>
+                  <option value="Half Moon, A RockResort">
+                    Half Moon, A RockResort
+                  </option>
+                  <option value="Hedonism II">Hedonism II Negril</option>
+                  <option value="Hilton Rose Hall Resort & Spa">
+                    Hilton Rose Hall Resort & Spa
+                  </option>
+                  <option value="Iberostar Grand Rose Hall">
+                    Iberostar Grand Rose Hall
+                  </option>
+                  <option value="Jamaica Inn">Jamaica Inn</option>
+                  <option value="Jewel Dunn's River Beach Resort & Spa">
+                    Jewel Dunn's River Beach Resort & Spa
+                  </option>
+                  <option value="Kaz Kreol Beach Lodge & Wellness Retreat">
+                    Kaz Kreol Beach Lodge & Wellness Retreat
+                  </option>
+                  <option value="Melia Bracco">Melia Bracco</option>
+                  <option value="Moon Palace Jamaica">
+                    Moon Palace Jamaica
+                  </option>
+                  <option value="Mystic Ridge Resort">
+                    Mystic Ridge Resort
+                  </option>
+                  <option value="Ocean Coral Spring">Ocean Coral Spring</option>
+                  <option value="Ocean Eden Bay">Ocean Eden Bay</option>
+                  <option value="Pipers Cove Resort">Pipers Cove Resort</option>
+                  <option value="Riu Palace Tropical Bay">
+                    Riu Palace Tropical Bay
+                  </option>
+                  <option value="RIU Ocho Rios">RIU Ocho Rios</option>
+                  <option value="Rockhouse Hotel">Rockhouse Hotel</option>
+                  <option value="Royal Decameron Club Caribbean">
+                    Royal Decameron Club Caribbean
+                  </option>
+                  <option value="Royal Plantation">Royal Plantation</option>
+                  <option value="Royalton Blue Waters Montego Bay">
+                    Royalton Blue Waters Montego Bay
+                  </option>
+                  <option value="Royalton Negril Resort & Spa">
+                    Royalton Negril Resort & Spa
+                  </option>
+                  <option value="Sandals Negril Beach Resort & Spa">
+                    Sandals Negril Beach Resort & Spa
+                  </option>
+                  <option value="Sandals Montego Bay">
+                    Sandals Montego Bay
+                  </option>
+                  <option value="Sandals Ochi Beach Resort">
+                    Sandals Ochi Beach Resort
+                  </option>
+                  <option value="Sandals White House">
+                    Sandals White House
+                  </option>
+                  <option value="Sandcastles Resorts">
+                    Sandcastles Resorts
+                  </option>
+                  <option value="Shaw Park Beach Hotel & Spa">
+                    Shaw Park Beach Hotel & Spa
+                  </option>
+                  <option value="Silver Seas Hotel">Silver Seas Hotel</option>
+                  <option value="Sky Castles">Sky Castles</option>
+                  <option value="Sunset at the Palms Resort">
+                    Sunset at the Palms Resort
+                  </option>
+                  <option value="Turtle Beach Towers">
+                    Turtle Beach Towers
+                  </option>
+                  <option value="Tryall">Tryall Club</option>
+                </select>
+              </div>
+
+              <div class="option">
+                <label for="arrival-date">Arrival Date:</label>
+                <input type="date" id="arrival-date" required />
+              </div>
+            </div>
+
+            <div class="options-right">
+              <div class="option">
+                <label for="departure-date">Departure Date:</label>
+                <input
+                  type="date"
+                  id="departure-date"
+                  placeholder="Departure Date"
+                  required
+                />
+              </div>
+
+              <div class="option">
+                <label for="airport">Airport:</label>
+                <select id="airport" required>
+                  <option value="" disabled selected>Select Airport</option>
+                  <option value="MBJ">MBJ - Montego Bay</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <button class="book-btn">Book Now</button>
+        </div>
+
+        <div id="tour-options" class="booking-form">
+          <h2>Tour Booking</h2>
+          <div class="option-row">
+            <div class="option">
+              <label for="tour">Tour:</label>
+              <select id="tour" required>
+                <option value="" disabled selected>Select Tour</option>
+                <option value="Rick’s Cafe, Negril">Rick’s Cafe, Negril</option>
+                <!-- Add other tour options here -->
+              </select>
+            </div>
+            <div class="option">
+              <label for="tour-date">Tour Date:</label>
+              <input type="date" id="tour-date" required />
+            </div>
+            <div class="option persons">
+              <label for="tour-persons">Persons:</label>
+              <input
+                type="number"
+                id="tour-adults"
+                placeholder="Adults (18+)"
+                min="1"
+                max="10"
+                required
+              />
+              <input
+                type="number"
+                id="tour-children"
+                placeholder="Children (3-17)"
+                min="0"
+                max="10"
+              />
+              <input
+                type="number"
+                id="tour-infants"
+                placeholder="Infants (0-2)"
+                min="0"
+                max="10"
+              />
+            </div>
+          </div>
+          <button class="book-btn">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- REVIEW SLIDER -->
+
+    <section class="review-ctn">
+      <div class="review mySwiper">
+        <div class="review-content swiper-wrapper">
+          <!-- SLIDE 1 -->
+          <div class="slide swiper-slide">
+            <div class="details">
+              <span class="reviewer-name">Spencer</span>
+            </div>
+            <p>
+              "Kenlm Tours took all the stress out of our Jamaica cruise stop!
+              They were waiting right at the pier, got us to our destination
+              quickly, and even picked us up on time. Highly recommended for a
+              hassle-free day exploring."
+            </p>
+          </div>
+
+          <!-- SLIDE 2 -->
+          <div class="slide swiper-slide">
+            <div class="details">
+              <span class="reviewer-name">Kerri-Ann</span>
+            </div>
+            <p>
+              “Best Driver in Jamaica comes from KenLM , got us safely to our
+              destination and on time”
+            </p>
+          </div>
+
+          <!-- SLIDE 3 -->
+          <div class="slide swiper-slide">
+            <div class="details">
+              <span class="reviewer-name">G</span>
+            </div>
+            <p>
+              "We weren't sure exactly what we wanted to do, but Kenlm Tours
+              helped us plan the perfect day trip from our cruise.”
+            </p>
+          </div>
+        </div>
+        <div class="swiper-button-next nxt-btn"></div>
+        <div class="swiper-button-prev nxt-btn"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <!-- SERVICE CARD SECTION -->
+
+    <section class="service-cards">
+      <div class="sc-container container">
+        <!-- CARD 1 -->
+        <div class="card-container">
+          <div class="card">
+            <div class="card-front cf-1">
+              <h2>Let's Get Wet!</h2>
+              <p>Hike, Climb, and Splash at Dunn's River Falls, Jamaica!</p>
+            </div>
+            <div class="card-back cb-1">
+              <h2>Book With Us Today!</h2>
+              <p>
+                Get ready to conquer cascading waterfalls, embrace the
+                refreshing coolness of nature, and create memories that will
+                last a lifetime!
+              </p>
+              <a href="#"><button>Book Now!</button></a>
+            </div>
+          </div>
+        </div>
+        <!-- CARD 2 -->
+        <div class="card-container">
+          <div class="card">
+            <div class="card-front cf-2">
+              <h2>Let's Mix It Up</h2>
+              <p>Embark on a Journey of Natural Wonders!</p>
+            </div>
+            <div class="card-back cb-2">
+              <h2>Ys Falls & Black River Safari Tour!</h2>
+              <p>
+                Experience the contrasting beauty of Jamaica on this captivating
+                tour, featuring the majestic Ys Falls and the thrilling Black
+                River Safari!
+              </p>
+              <a href="#"><button>Let's Go!</button></a>
+            </div>
+          </div>
+        </div>
+        <!-- CARD 3 -->
+        <div class="card-container">
+          <div class="card">
+            <div class="card-front cf-3">
+              <h2>A Bit Of Rum</h2>
+              <p>Appleton Estate Rum Tour</p>
+            </div>
+            <div class="card-back cb-3">
+              <h2>Uncork the Secrets of Jamaican Rum</h2>
+              <p>
+                Embark on a journey into the heart of Jamaican rum production
+                with our exclusive Appleton Estate tour!
+              </p>
+              <button>Let's Do It!</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOUR OFFERS -->
+
+    <section class="tour-preview-container">
+      <div class="container">
+        <h2>Let's see what works!</h2>
+        <div class="tour-preview">
+          <!-- OFFER -->
+          <div class="tour-card-ctn">
+            <div class="tour-card">
+              <h3>Airport Transfers</h3>
+              <p>
+                Arrive in style with Kenlm Airport Pickup for seamless travel.
+              </p>
+              <a href="./airport-transfer.html"
+                ><button>Check it Out</button></a
+              >
+            </div>
+          </div>
+          <!-- OFFER -->
+          <div class="tour-card-ctn">
+            <div class="tour-card">
+              <h3>Tours</h3>
+              <p>
+                Embark on an unforgettable journey through the vibrant heart of
+                Jamaica.
+              </p>
+              <a href="./tours.html"><button>Let's See It!</button></a>
+            </div>
+          </div>
+          <!-- OFFER -->
+          <div class="tour-card-ctn">
+            <div class="tour-card">
+              <h3>Cruise</h3>
+              <p>
+                Experience the beauty of Jamaica beyond the pier with Kenlm
+                Tours!
+              </p>
+              <a href="#" aria-disabled="true"><button>Coming Soon!</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+      <div class="footer-ctn container">
+        <div class="footer-contact">
+          <h2>Discover & Connect</h2>
+          <div class="fc-sections">
+            <!-- Footer Element -->
+            <div class="fc-section-ctn">
+              <div class="fc-element">
+                <h3>Address</h3>
+                <ul>
+                  <li>Grange pen , Lilliput, Rosehall</li>
+                  <li>Montego bay , St.James</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Footer Element -->
+            <div class="fc-section-ctn">
+              <div class="fc-element">
+                <h3>Contact</h3>
+                <ul>
+                  <li>876-864-4024</li>
+                  <li>876-837-6627</li>
+                  <li>
+                    <a href="mailto:Kenlmtoursja@gmail.com"
+                      >Kenlmtoursja@gmail.com</a
+                    >
+                  </li>
+                </ul>
+                <ul>
+                  <li></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Footer Element -->
+            <div class="fc-section-ctn">
+              <div class="fc-element">
+                <h3>Opening Hours</h3>
+                <ul class="opening-hours">
+                  <li>Sun - Thur</li>
+                  <li>24 Hours</li>
+                  <li>Friday</li>
+                  <li>9am - 6pm</li>
+                  <li>Saturday</li>
+                  <li>6pm - 12 am</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- RIVIEW-SLIDER JS -->
+    <script src="./js/swiper-bundle.min.js"></script>
+    <!-- JS FILE -->
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/auth.js"></script>
+    <script type="module" src="./js/bookings.js"></script>
+    <script type="module" src="./js/firebaseConfig.js"></script>
+  </body>
+</html>

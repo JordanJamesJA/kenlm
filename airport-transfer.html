@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="Airport Transfer, Shuttle Service, Transportation, Travel, Sangster International Airport, Norman Manley International Airport"
+    />
+    <title>KenLM - Airport Transfer</title>
+    <link rel="icon" type="image/png" href="./assets/logo.png" />
+    <link rel="stylesheet" href="./css/airport-transfer.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <nav class="nav container">
+        <div class="nav-left">
+          <a href="./index.html"><img src="./assets/logo.png" /></a>
+        </div>
+        <div class="nav-toggle" id="nav-toggle">
+          <i class="ri-menu-line nav-burger"></i>
+          <i class="ri-close-line nav-close"></i>
+        </div>
+
+        <!-- NAV MENU -->
+        <div class="nav-menu" id="nav-menu">
+          <ul class="nav-list">
+            <li><a href="./index.html" class="nav-link">Home</a></li>
+            <li><a href="./about.html" class="nav-link">About</a></li>
+            <li><a href="./services.html" class="nav-link">Services</a></li>
+            <li><a href="./contact.html" class="nav-link">Contact</a></li>
+            <li><a href="#" class="nav-link">Reservations</a></li>
+          </ul>
+          <div class="nav-right">
+            <a href="#" id="profile-icon"
+              ><img src="./assets/account-icon.png" alt="Account"
+            /></a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+      <section class="airport-transfer">
+        <h1>Airport Transfer Services</h1>
+        <p>
+          Experience seamless and comfortable airport transfers with KenLM. We
+          ensure a smooth journey from Sangster International Airport or Norman
+          Manley International Airport to your desired destination. Our reliable
+          and professional service guarantees a stress-free start and end to
+          your trip.
+        </p>
+
+        <h2>Book Your Transfer</h2>
+        <div id="airport-transfer-options" class="booking-form active">
+          <div class="option-row">
+            <div class="options-left">
+              <div class="option">
+                <label for="transfer-type">Transfer Type:</label>
+                <select id="transfer-type" required>
+                  <option value="round">Round Trip</option>
+                  <option value="to-hotel">To Hotel</option>
+                  <option value="to-airport">To Airport</option>
+                </select>
+              </div>
+              <div class="option-row pInfo-option">
+                <div class="option">
+                  <label for="name-tour">Your Name:</label>
+                  <input
+                    type="text"
+                    id="name-tour"
+                    placeholder="Enter your name"
+                    required
+                  />
+                </div>
+                <div class="option">
+                  <label for="phone-tour">Phone Number:</label>
+                  <input
+                    type="tel"
+                    id="phone-tour"
+                    placeholder="Enter your phone number"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="option-right">
+              <div class="option persons">
+                <label for="persons">Persons:</label>
+                <input
+                  type="number"
+                  id="adults"
+                  placeholder="Adults (18+)"
+                  min="1"
+                  max="10"
+                  required
+                />
+                <input
+                  type="number"
+                  id="children"
+                  placeholder="Children (3-17)"
+                  min="0"
+                  max="10"
+                />
+                <input
+                  type="number"
+                  id="infants"
+                  placeholder="Infants (0-2)"
+                  min="0"
+                  max="10"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="option-row options-left">
+            <div class="option">
+              <label for="hotel">Hotel:</label>
+              <select id="hotel" required>
+                <option value="" disabled selected>Select Hotel</option>
+                <option value="Azul Beach Resort Negril by Karisma">
+                  Azul Beach Resort Negril by Karisma
+                </option>
+                <option value="Bahia Principe">Bahia Principe</option>
+                <option value="Breathless Montego Bay Resort & Spa">
+                  Breathless Montego Bay Resort & Spa
+                </option>
+                <option value="Couples Negril">Couples Negril</option>
+                <option value="Couples Tower Isle">Couples Tower Isle</option>
+                <option value="Excellence Oyster Bay">
+                  Excellence Oyster Bay
+                </option>
+                <option value="Glistening Waters">Glistening Waters</option>
+                <option value="Grand Lido Negril Au Naturel All-Suite-Resort">
+                  Grand Lido Negril Au Naturel All-Suite-Resort
+                </option>
+                <option value="Grand Palladium Lady Hamilton Resort & Spa">
+                  Grand Palladium Lady Hamilton Resort & Spa
+                </option>
+                <option value="Half Moon, A RockResort">
+                  Half Moon, A RockResort
+                </option>
+                <option value="Hedonism II">Hedonism II Negril</option>
+                <option value="Hilton Rose Hall Resort & Spa">
+                  Hilton Rose Hall Resort & Spa
+                </option>
+                <option value="Iberostar Grand Rose Hall">
+                  Iberostar Grand Rose Hall
+                </option>
+                <option value="Jamaica Inn">Jamaica Inn</option>
+                <option value="Jewel Dunn's River Beach Resort & Spa">
+                  Jewel Dunn's River Beach Resort & Spa
+                </option>
+                <option value="Kaz Kreol Beach Lodge & Wellness Retreat">
+                  Kaz Kreol Beach Lodge & Wellness Retreat
+                </option>
+                <option value="Melia Bracco">Melia Bracco</option>
+                <option value="Moon Palace Jamaica">Moon Palace Jamaica</option>
+                <option value="Mystic Ridge Resort">Mystic Ridge Resort</option>
+                <option value="Ocean Coral Spring">Ocean Coral Spring</option>
+                <option value="Ocean Eden Bay">Ocean Eden Bay</option>
+                <option value="Pipers Cove Resort">Pipers Cove Resort</option>
+                <option value="Riu Palace Tropical Bay">
+                  Riu Palace Tropical Bay
+                </option>
+                <option value="RIU Ocho Rios">RIU Ocho Rios</option>
+                <option value="Rockhouse Hotel">Rockhouse Hotel</option>
+                <option value="Royal Decameron Club Caribbean">
+                  Royal Decameron Club Caribbean
+                </option>
+                <option value="Royal Plantation">Royal Plantation</option>
+                <option value="Royalton Blue Waters Montego Bay">
+                  Royalton Blue Waters Montego Bay
+                </option>
+                <option value="Royalton Negril Resort & Spa">
+                  Royalton Negril Resort & Spa
+                </option>
+                <option value="Sandals Negril Beach Resort & Spa">
+                  Sandals Negril Beach Resort & Spa
+                </option>
+                <option value="Sandals Montego Bay">Sandals Montego Bay</option>
+                <option value="Sandals Ochi Beach Resort">
+                  Sandals Ochi Beach Resort
+                </option>
+                <option value="Sandals White House">Sandals White House</option>
+                <option value="Sandcastles Resorts">Sandcastles Resorts</option>
+                <option value="Shaw Park Beach Hotel & Spa">
+                  Shaw Park Beach Hotel & Spa
+                </option>
+                <option value="Silver Seas Hotel">Silver Seas Hotel</option>
+                <option value="Sky Castles">Sky Castles</option>
+                <option value="Sunset at the Palms Resort">
+                  Sunset at the Palms Resort
+                </option>
+                <option value="Turtle Beach Towers">Turtle Beach Towers</option>
+                <option value="Tryall">Tryall Club</option>
+              </select>
+            </div>
+
+            <div class="option">
+              <label for="arrival-date">Arrival Date:</label>
+              <input type="date" id="arrival-date" required />
+            </div>
+          </div>
+
+          <div class="options-right">
+            <div class="option">
+              <label for="departure-date">Departure Date:</label>
+              <input
+                type="date"
+                id="departure-date"
+                placeholder="Departure Date"
+                required
+              />
+            </div>
+
+            <div class="option">
+              <label for="airport">Airport:</label>
+              <select id="airport" required>
+                <option value="" disabled selected>Select Airport</option>
+                <option value="MBJ">MBJ - Montego Bay</option>
+              </select>
+            </div>
+          </div>
+          <button class="book-btn">Book Now</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-ctn container">
+        <div class="footer-contact">
+          <h2>Discover & Connect</h2>
+          <div class="fc-sections">
+            <!-- Footer Element -->
+            <div class="fc-section-ctn">
+              <div class="fc-element">
+                <h3>Address</h3>
+                <ul>
+                  <li>Grange pen, Lilliput, Rosehall</li>
+                  <li>Montego Bay, St. James</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Footer Element -->
+            <div class="fc-section-ctn">
+              <div class="fc-element">
+                <h3>Contact</h3>
+                <ul>
+                  <li>876-864-4024</li>
+                  <li>876-837-6627</li>
+                  <li>Kenlmtoursja@gmail.com</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Footer Element -->
+            <div class="fc-section-ctn">
+              <div class="fc-element">
+                <h3>Opening Hours</h3>
+                <ul class="opening-hours">
+                  <li>Sun - Thur</li>
+                  <li>24 Hours</li>
+                  <li>Friday</li>
+                  <li>9am - 6pm</li>
+                  <li>Saturday</li>
+                  <li>6pm - 12 am</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="./js/auth.js"></script>
+    <script type="module" src="./js/firebaseConfig.js"></script>
+    <script type="module" src="./js/bookings.js"></script>
+  </body>
+</html>

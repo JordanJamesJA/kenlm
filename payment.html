@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Payments, KenLM, Travel, Tours" />
+    <title>KenLM - Payments</title>
+    <link rel="icon" type="image/png" href="./assets/logo.png" />
+    <link rel="stylesheet" href="./css/payment.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <nav class="nav container">
+        <div class="nav-left">
+          <a href="./index.html"><img src="./assets/logo.png" alt="Logo" /></a>
+        </div>
+        <div class="nav-toggle" id="nav-toggle">
+          <i class="ri-menu-line nav-burger"></i>
+          <i class="ri-close-line nav-close"></i>
+        </div>
+        <!-- NAV MENU -->
+        <div class="nav-menu" id="nav-menu">
+          <ul class="nav-list">
+            <li><a href="./index.html" class="nav-link">Home</a></li>
+            <li><a href="./about.html" class="nav-link">About</a></li>
+            <li><a href="./services.html" class="nav-link">Services</a></li>
+            <li><a href="./contact.html" class="nav-link">Contact</a></li>
+            <li><a href="#" class="nav-link">Reservations</a></li>
+          </ul>
+          <div class="nav-right">
+            <a href="./login.html"
+              ><img src="./assets/account-icon.png" alt="Account"
+            /></a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- PAYMENTS FORM -->
+    <section class="payments-section">
+      <div class="payments-container">
+        <h1>Make a Payment</h1>
+        <form action="#" method="POST">
+          <div class="input-group">
+            <label for="name">Name On Card</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="input-group">
+            <label for="card-number">Card Number</label>
+            <input type="text" id="card-number" name="card-number" required />
+          </div>
+          <div class="input-group">
+            <label for="expiration">Expiration Date (MM/YY)</label>
+            <input
+              type="text"
+              id="expiration"
+              name="expiration"
+              placeholder="MM/YY"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" name="cvv" required />
+          </div>
+          <button type="submit" class="btn">Pay Now</button>
+        </form>
+        <p>Transaction details are secured and encrypted.</p>
+      </div>
+    </section>
+
+    <script type="module" src="./js/payments.js" defer></script>
+    <script src="https://js.stripe.com/v3/"></script>
+  </body>
+</html>
