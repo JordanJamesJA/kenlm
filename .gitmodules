@@ -1,0 +1,3 @@
+[submodule "KenLM"]
+    path = KenLM
+    url = git@github.com:JordanJamesJA/kenlm.git
