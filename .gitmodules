@@ -1,3 +1,0 @@
-[submodule "KenLM"]
-    path = KenLM
-    url = https://github.com/JordanJamesJA/kenlm.git
