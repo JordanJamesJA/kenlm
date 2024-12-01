@@ -286,7 +286,7 @@ nav {
   text-align: center;
 }
 
-#bg-video {
+#hero-bg {
   position: absolute;
   top: 0;
   left: 0;
@@ -296,12 +296,13 @@ nav {
   z-index: -1;
 }
 
-.booking-container {
+.hs-info-container {
   position: relative;
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-evenly;
   margin: auto;
   background-color: #ffffffa5;
   padding: 2rem;
@@ -309,6 +310,25 @@ nav {
   z-index: 1;
 }
 
+.hs-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-wrap: break-word;
+  max-width: 500px;
+  height: 300px;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.hs-info p {
+  font-size: 1.2rem;
+}
+
+#hero-video {
+  height: 500px;
+}
+/* 
 .booking-options {
   display: flex;
   justify-content: center;
@@ -330,7 +350,6 @@ nav {
   color: white;
 }
 
-/* Apply consistent spacing, padding, and form layout */
 .booking-form {
   display: none;
   flex-direction: column;
@@ -430,6 +449,16 @@ nav {
 .submit-btn {
   background-color: #28a745;
   color: white;
+} */
+
+.cta-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 150px;
 }
 
 button:hover {
@@ -438,6 +467,41 @@ button:hover {
 
 /* Media queries for responsiveness */
 @media only screen and (max-width: 768px) {
+  .hs-info-container {
+    flex-direction: column; /* Stack elements vertically */
+    padding: 1rem; /* Reduce padding */
+  }
+
+  .hs-info {
+    align-items: center; /* Center text content */
+    max-width: 100%; /* Use full width */
+    height: auto; /* Allow content to grow naturally */
+  }
+
+  .hs-info h1 {
+    font-size: 1.5rem; /* Reduce font size for heading */
+  }
+
+  .hs-info p {
+    font-size: 1rem; /* Adjust paragraph font size */
+    margin: 1.5rem 0;
+  }
+
+  #hero-video {
+    width: 200px; /* Make the video responsive */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .hero-vid {
+    order: 1;
+  }
+
+  .cta-btn {
+    font-size: 0.9rem; /* Slightly smaller button text */
+    padding: 8px;
+    display: none;
+  }
+
   .booking-container {
     padding: 1.5rem;
   }

@@ -73,82 +73,87 @@ var swiper = new Swiper(".mySwiper", {
   speed: 1000,
 });
 
-// Booking Section (HERO)
-const airportTransferTab = document.getElementById("airport-transfer-tab");
-const tourTab = document.getElementById("tour-tab");
-const airportTransferOptions = document.getElementById(
-  "airport-transfer-options"
-);
-const tourOptions = document.getElementById("tour-options");
-const airportTransferDateInput = document.getElementById(
-  "airport-transfer-date"
-);
-const tourDateInput = document.getElementById("tour-date-input");
+// // Booking Section (HERO)
+// const airportTransferTab = document.getElementById("airport-transfer-tab");
+// const tourTab = document.getElementById("tour-tab");
+// const airportTransferOptions = document.getElementById(
+//   "airport-transfer-options"
+// );
+// const tourOptions = document.getElementById("tour-options");
+// const airportTransferDateInput = document.getElementById(
+//   "airport-transfer-date"
+// );
+// const tourDateInput = document.getElementById("tour-date-input");
 
-if (airportTransferTab && tourTab) {
-  tourTab.addEventListener("click", function () {
-    // Active class to tour options and remove from airport transfer options
-    tourOptions.classList.add("active");
-    airportTransferOptions.classList.remove("active");
-    tourTab.classList.add("active");
-    airportTransferTab.classList.remove("active");
-  });
+// if (airportTransferTab && tourTab) {
+//   tourTab.addEventListener("click", function () {
+//     // Active class to tour options and remove from airport transfer options
+//     tourOptions.classList.add("active");
+//     airportTransferOptions.classList.remove("active");
+//     tourTab.classList.add("active");
+//     airportTransferTab.classList.remove("active");
+//   });
 
-  airportTransferTab.addEventListener("click", function () {
-    airportTransferOptions.classList.add("active");
-    tourOptions.classList.remove("active");
-    airportTransferTab.classList.add("active");
-    tourTab.classList.remove("active");
-  });
-}
+//   airportTransferTab.addEventListener("click", function () {
+//     airportTransferOptions.classList.add("active");
+//     tourOptions.classList.remove("active");
+//     airportTransferTab.classList.add("active");
+//     tourTab.classList.remove("active");
+//   });
+// }
 
-function updateMinDate(dateInput) {
-  const currentDate = new Date();
-  const minDate = new Date(currentDate);
-  minDate.setDate(minDate.getDate() + 7);
-  const year = minDate.getFullYear();
-  const month = String(minDate.getMonth() + 1).padStart(2, "0");
-  const day = String(minDate.getDate()).padStart(2, "0");
-  const formattedMinDate = `${year}-${month}-${day}`;
+// function updateMinDate(dateInput) {
+//   const currentDate = new Date();
+//   const minDate = new Date(currentDate);
+//   minDate.setDate(minDate.getDate() + 7);
+//   const year = minDate.getFullYear();
+//   const month = String(minDate.getMonth() + 1).padStart(2, "0");
+//   const day = String(minDate.getDate()).padStart(2, "0");
+//   const formattedMinDate = `${year}-${month}-${day}`;
 
-  if (dateInput) {
-    dateInput.min = formattedMinDate;
-  }
-}
+//   if (dateInput) {
+//     dateInput.min = formattedMinDate;
+//   }
+// }
 
-document.addEventListener("DOMContentLoaded", () => {
-  document
-    .getElementById("airport-transfer-tab")
-    ?.addEventListener("click", function () {
-      updateMinDate(airportTransferDateInput);
-    });
+// document.addEventListener("DOMContentLoaded", () => {
+//   document
+//     .getElementById("airport-transfer-tab")
+//     ?.addEventListener("click", function () {
+//       updateMinDate(airportTransferDateInput);
+//     });
 
-  document.getElementById("tour-tab")?.addEventListener("click", function () {
-    updateMinDate(tourDateInput);
-  });
-});
+//   document.getElementById("tour-tab")?.addEventListener("click", function () {
+//     updateMinDate(tourDateInput);
+//   });
+// });
 
-function showForm(formId) {
-  // Hide all forms
-  document
-    .querySelectorAll(".booking-form")
-    .forEach((form) => form.classList.remove("active"));
+// function showForm(formId) {
+//   // Hide all forms
+//   document
+//     .querySelectorAll(".booking-form")
+//     .forEach((form) => form.classList.remove("active"));
 
-  // Show the selected form
-  document.getElementById(formId).classList.add("active");
+//   // Show the selected form
+//   document.getElementById(formId).classList.add("active");
 
-  // Remove active class from all tabs
-  document
-    .querySelectorAll(".tab-btn")
-    .forEach((btn) => btn.classList.remove("active"));
+//   // Remove active class from all tabs
+//   document
+//     .querySelectorAll(".tab-btn")
+//     .forEach((btn) => btn.classList.remove("active"));
 
-  // Add active class to the clicked tab
-  if (formId === "airport-transfer-options") {
-    document.getElementById("airport-transfer-tab").classList.add("active");
-  } else {
-    document.getElementById("tour-booking-tab").classList.add("active");
-  }
-}
+//   // Add active class to the clicked tab
+//   if (formId === "airport-transfer-options") {
+//     document.getElementById("airport-transfer-tab").classList.add("active");
+//   } else {
+//     document.getElementById("tour-booking-tab").classList.add("active");
+//   }
+// }
 
-// Initially show the Airport Transfer form
-document.getElementById("airport-transfer-tab").classList.add("active");
+// // Initially show the Airport Transfer form
+// document.getElementById("airport-transfer-tab").classList.add("active");
+
+const video = document.getElementById('bg-video');
+video.onplay = () => {
+  video.muted = false; 
+};
