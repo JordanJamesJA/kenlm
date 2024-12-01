@@ -378,12 +378,12 @@ footer {
   }
 
   .cs-left {
-    height: 100%;
+    height: auto;
     
   }
 
   .cs-left img {
-    height: 100%;
+    height: auto;
   }
 
   .cs-right {
