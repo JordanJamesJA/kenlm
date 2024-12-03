@@ -97,10 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const tourName = card.querySelector("h2").textContent;
       tourNameDiv.textContent = tourName;
 
-      console.log("Clicked Tour Name (trimmed):", tourName);
-
       const tourKey = Object.keys(toursData).find((key) => {
-        console.log("Checking tour:", toursData[key].name.trim());
         return (
           toursData[key].name.toLowerCase().trim() ===
           tourName.toLowerCase().trim()
@@ -108,12 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       if (tourKey) {
         const tour = toursData[tourKey];
-
-        // Log the fetched data (name, description, price) to check if it matches
-        console.log("Fetched Tour Name:", tour.name);
-        console.log("Fetched Tour Description:", tour.description);
-        console.log("Fetched Tour Price:", tour.price);
-
         tourDescriptionDiv.textContent = tour.description;
         tourPriceDiv.textContent = tour.price;
       } else {
